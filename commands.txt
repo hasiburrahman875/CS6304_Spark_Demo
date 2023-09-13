@@ -36,7 +36,7 @@ System.out.println(sorted.collect().mkString("\n"))
 val filter = sorted.filter(_._2 > 1)
 System.out.println(filter.collect().mkString("\n"))
 
-filter.saveAsTextFile("OutputFolder")
+filter.saveAsTextFile("hdfs://localhost:9000/user/mrpk9/OutputFolder/")
 
 
 **************************
