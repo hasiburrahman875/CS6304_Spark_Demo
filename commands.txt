@@ -18,7 +18,7 @@ Simple WordCount
 
 spark-shell
 
-val loadfile = sc.textFile("InputFolder/input1.txt")
+val loadfile = sc.textFile("hdfs://localhost:9000/user/mrpk9/InputFolder/input1.txt")
 System.out.println(loadfile.collect().mkString("\n"))
 
 val words = loadfile.flatMap(line => line.split(" "))
@@ -45,7 +45,7 @@ Word count in all Chapters
 
 spark-shell
 
-val loadfile = sc.textFile("InputFolder/input2.txt")
+val loadfile = sc.textFile("hdfs://localhost:9000/user/mrpk9/InputFolder/input2.txt")
 
 val pairs = loadfile.map{ line => val parts = line.split("\t");	(parts(0), parts(1)); }
 System.out.println(pairs.collect().mkString("\n"))
