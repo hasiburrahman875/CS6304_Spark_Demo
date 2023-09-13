@@ -15,12 +15,12 @@ Follow the instructions from commands.txt file.
 
 
 
-### Install Spark (TO STUDENTS: DO NOT TRY TO INSTALL)
+### Install Spark
 DO NOT Install Spark again. It is already installed in your VM.  
-You can consider the below section as a self note.  
+You can consider the below section as a self-note.  
 We consider that Java and Hadoop are already installed.\\
 Follow the below steps:
-1. Open a terminal and enter below commands
+1. Open a terminal and enter the below commands
 ```
 sudo apt update
 ```
@@ -36,6 +36,6 @@ export SPARK_HOME=/opt/spark
 export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
 EOF
 ```
-2. Go to top right corner and select power button -> power off
-3. Log in to remote desktop again. Now your spark path is set and you can type "spark-shell" in terminal to access spark.\\
+2. Go to the top right corner and select the power button -> Log Out [Don't power off]
+3. Log in to the remote desktop again. Now your spark path is set and you can type "spark-shell" in the terminal to access spark.\\
 You can access spark by typing absolute path "/opt/spark/bin/spark-shell" also.
