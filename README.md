@@ -37,5 +37,5 @@ export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
 EOF
 ```
 2. Go to the top right corner and select the power button -> Log Out [Don't power off]
-3. Log in to the remote desktop again. Now your spark path is set and you can type "spark-shell" in the terminal to access spark.\\
+3. Log in to the remote desktop again. Now your spark path is set and you can type "spark-shell" in the terminal to access spark.
 You can access spark by typing absolute path "/opt/spark/bin/spark-shell" also.
