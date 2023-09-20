@@ -16,9 +16,9 @@ Follow the instructions from commands.txt file.
 
 
 ### Install Spark
-DO NOT Install Spark again. It is already installed in your VM.  
+DO NOT Install Spark again if it is already installed in your VM.  
 You can consider the below section as a self-note.  
-We consider that Java and Hadoop are already installed.\\
+We consider that Java and Hadoop are already installed.
 Follow the below steps:
 1. Open a terminal and enter the below commands
 ```
