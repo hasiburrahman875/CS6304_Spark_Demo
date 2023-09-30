@@ -41,7 +41,7 @@ EOF
 You can access spark by typing absolute path "/opt/spark/bin/spark-shell" also.
 
 ### Run a scala file
-//Run a scala file using the following command 
-//spark-shell -i '/home/mrpk9/test_scala.scala'
+Run a scala file using the following command 
+spark-shell -i '/home/mrpk9/test_scala.scala'
 
-//Please replace the paths according to your file locations
+Please replace the paths according to your file locations
