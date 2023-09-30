@@ -6,6 +6,8 @@ val sorted = wordCount.sortBy(-_._2)
 val filter = sorted.filter(_._2 > 1)
 filter.saveAsTextFile("hdfs://localhost:9000/user/mrpk9/OutputFold/")
 
+
+//Run the scala file using the following command 
 //spark-shell -i '/home/mrpk9/test_scala.scala'
 
-//please replace the paths according to your file locations
+//Please replace the paths according to your file locations
