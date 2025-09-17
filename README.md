@@ -25,7 +25,7 @@ Follow the below steps:
 sudo apt update
 ```
 ```
-wget https://dlcdn.apache.org/spark/spark-3.3.3/spark-3.3.3-bin-hadoop3.tgz
+wget https://mirror.lyrahosting.com/apache/spark/spark-3.3.3/spark-3.3.3-bin-hadoop3.tgz
 tar xvf spark-3.3.3-bin-hadoop3.tgz
 rm spark-3.3.3-bin-hadoop3.tgz
 sudo mv spark-3.3.3-bin-hadoop3/ /opt/spark 
