@@ -1,6 +1,7 @@
-Download the git file:
+Download the git file and enter into the folder:
 
 git clone https://github.com/hasiburrahman875/CS6304_Spark_Demo
+cd CS6304_Spark_Demo
 
 ***************
 Hadoop Commands
