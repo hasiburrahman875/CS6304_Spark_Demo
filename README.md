@@ -29,7 +29,7 @@
 If you encounter a black screen issue when connecting to the VM via Remote Desktop, follow the steps below:
 
 SSH into the VM
-```bash
+```
 ssh <username>@cs6304-<username>-01.class.mst.edu
 ````
 
@@ -105,7 +105,7 @@ start-yarn.sh
 If still missing, clear old DataNode data:
 
 ```bash
-delete /tmp/hadoop-dtg95/dfs/data/ using rm -r /tmp/hadoop-dtg95/dfs/data/, and do following:
+delete /tmp/hadoop-dtg95/dfs/data/ using rm -r /tmp/hadoop-dtg95/dfs/data/
 stop-all.sh
 hadoop namenode -format
 start-all.sh
