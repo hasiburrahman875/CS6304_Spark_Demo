@@ -1,11 +1,115 @@
 # Spark
 
-### General Information:
+### VM Access Instructions
 
-* Operating System:         Mac -> Microsoft Remote Desktop, Windows -> Default Remote Desktop, Ubuntu -> Remmina
-* Machine:                  cs6304-<mst_username>-01.class.mst.edu
-* User:                     <mst_username>
-* Default Password:         <mst_password>
+1. **Network Requirement**
+
+   * If you are on the **S\&T network**, you do **not** need a VPN.
+   * If you are **off-campus**, please install and connect to the VPN before accessing.
+   * [S\&T VPN Installation Guide](https://it.mst.edu/services/vpn/)
+
+2. **Remote Desktop Applications**
+
+   * **Mac:** Use the **Microsoft Remote Desktop app (currently it is Windows APP)**.
+   * **Windows:** Use the **built-in Remote Desktop** application.
+   * **Ubuntu/Linux:** Use **Remmina**.
+
+3. **Connection Details**
+
+   * **Machine:** `cs6304-<mst_username>-01.class.mst.edu`
+   * **Username:** `<mst_username>`
+   * **Default Password:** `<mst_password>`
+     
+## Do not shutdown or, restart, or sign out, or user switch from the VM
+
+## Fixing Black Screen Issue on Remote Desktop (XRDP)
+
+````markdown
+
+If you encounter a black screen issue when connecting to the VM via Remote Desktop, follow the steps below:
+
+SSH into the VM
+```bash
+ssh <username>@cs6304-<username>-01.class.mst.edu
+````
+
+Update and Install Required Packages
+
+```bash
+sudo apt update
+sudo apt install -y xorgxrdp xfce4 xfce4-goodies dbus-x11
+```
+
+Configure Session
+
+```bash
+echo "startxfce4" > ~/.xsession
+```
+
+Refresh Group Membership
+
+```bash
+newgrp ssl-cert
+```
+
+Remove Old Session Files
+
+```bash
+rm -f ~/.Xauthority ~/.xsession-errors 2>/dev/null || true
+```
+
+Restart XRDP Services
+
+```bash
+sudo systemctl restart xrdp xrdp-sesman
+```
+
+Verify XRDP Status
+
+```bash
+sudo systemctl status xrdp xrdp-sesman --no-pager
+```
+
+### Test Hadoop Accessibility:
+Run the following commands in your VM terminal:
+```
+stop-all.sh
+hadoop namenode -format
+start-all.sh
+```
+Run the following command to check the services:
+```
+jps
+```
+If everything is fine, you should see the following jobs (ignore the job number in the left) running
+```
+13623 NameNode
+14088 SecondaryNameNode
+14297 ResourceManager
+49546 Jps
+14459 NodeManager
+13807 DataNode
+```
+
+##### if DataNode is Missing:
+
+**Problem:** NameNode UI (`http://localhost:9870`) shows **no DataNodes**.
+
+**Fix:**
+
+```bash
+start-dfs.sh
+start-yarn.sh
+```
+
+If still missing, clear old DataNode data:
+
+```bash
+delete /tmp/hadoop-dtg95/dfs/data/ using rm -r /tmp/hadoop-dtg95/dfs/data/, and do following:
+stop-all.sh
+hadoop namenode -format
+start-all.sh
+```
 
 
 
