@@ -9,8 +9,8 @@ Hadoop Commands
 
 hadoop fs -rm -r InputFolderSpark				//remove inputfolder if exist
 hadoop fs -mkdir InputFolderSpark				//make the inputfolder
-hadoop fs -copyFromLocal '/home/cloudera/Downloads/Spark_Demo-master/input1.txt' InputFolderSpark
-hadoop fs -copyFromLocal '/home/cloudera/Downloads/Spark_Demo-master/input2.txt' InputFolderSpark
+hadoop fs -copyFromLocal 'input1.txt' InputFolderSpark
+hadoop fs -copyFromLocal 'input2.txt' InputFolderSpark
 							//copy input1.txt and input2.txt to hdfs inputfolder
 hadoop fs -rm -r OutputFolderSpark				//remove outputfolder if exist
 hadoop fs -ls OutputFolderSpark				//see the files in outputfolder
