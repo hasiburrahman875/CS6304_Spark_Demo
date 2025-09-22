@@ -7,14 +7,14 @@ cd CS6304_Spark_Demo
 Hadoop Commands
 ***************
 
-hadoop fs -rm -r InputFolder				//remove inputfolder if exist
-hadoop fs -mkdir InputFolder				//make the inputfolder
-hadoop fs -copyFromLocal '/home/cloudera/Downloads/Spark_Demo-master/input1.txt' InputFolder
-hadoop fs -copyFromLocal '/home/cloudera/Downloads/Spark_Demo-master/input2.txt' InputFolder
+hadoop fs -rm -r InputFolderSpark				//remove inputfolder if exist
+hadoop fs -mkdir InputFolderSpark				//make the inputfolder
+hadoop fs -copyFromLocal '/home/cloudera/Downloads/Spark_Demo-master/input1.txt' InputFolderSpark
+hadoop fs -copyFromLocal '/home/cloudera/Downloads/Spark_Demo-master/input2.txt' InputFolderSpark
 							//copy input1.txt and input2.txt to hdfs inputfolder
-hadoop fs -rm -r OutputFolder				//remove outputfolder if exist
-hadoop fs -ls OutputFolder				//see the files in outputfolder
-hadoop fs -cat OutputFolder/part-00000			//see the content of the result
+hadoop fs -rm -r OutputFolderSpark				//remove outputfolder if exist
+hadoop fs -ls OutputFolderSpark				//see the files in outputfolder
+hadoop fs -cat OutputFolderSpark/part-00000			//see the content of the result
 
 
 ****************
@@ -23,7 +23,7 @@ Simple WordCount
 
 spark-shell
 
-val loadfile = sc.textFile("hdfs://localhost:9000/user/mrpk9/InputFolder/input1.txt")
+val loadfile = sc.textFile("hdfs://localhost:9000/user/mrpk9/InputFolderSpark/input1.txt")
 System.out.println(loadfile.collect().mkString("\n"))
 
 val words = loadfile.flatMap(line => line.split(" "))
@@ -41,7 +41,7 @@ System.out.println(sorted.collect().mkString("\n"))
 val filter = sorted.filter(_._2 > 1)
 System.out.println(filter.collect().mkString("\n"))
 
-filter.saveAsTextFile("hdfs://localhost:9000/user/mrpk9/OutputFolder/")
+filter.saveAsTextFile("hdfs://localhost:9000/user/mrpk9/OutputFolderSpark/")
 
 
 **************************
@@ -50,7 +50,7 @@ Word count in all Chapters
 
 spark-shell
 
-val loadfile = sc.textFile("hdfs://localhost:9000/user/mrpk9/InputFolder/input2.txt")
+val loadfile = sc.textFile("hdfs://localhost:9000/user/mrpk9/InputFolderSpark/input2.txt")
 
 val pairs = loadfile.map{ line => val parts = line.split("\t");	(parts(0), parts(1)); }
 System.out.println(pairs.collect().mkString("\n"))
