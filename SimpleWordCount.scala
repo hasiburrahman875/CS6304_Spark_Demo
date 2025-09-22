@@ -8,6 +8,7 @@ filter.saveAsTextFile("hdfs://localhost:9000/user/mrpk9/OutputFolderSparkT/")
 
 
 //Run the scala file using the following command 
-//spark-shell -i '/home/mrpk9/test_scala.scala'
+//spark-shell 
+//:load SimpleWordCount.scala
 
 //Please replace the paths according to your file locations
