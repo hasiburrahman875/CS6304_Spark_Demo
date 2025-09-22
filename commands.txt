@@ -1,6 +1,6 @@
 Download the git file:
 
-https://github.com/hasiburrahman875/CS6304_Spark_Demo
+git clone https://github.com/hasiburrahman875/CS6304_Spark_Demo
 
 ***************
 Hadoop Commands
