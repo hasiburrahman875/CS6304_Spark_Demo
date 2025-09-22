@@ -105,7 +105,7 @@ start-yarn.sh
 If still missing, clear old DataNode data:
 
 ```bash
-delete /tmp/hadoop-dtg95/dfs/data/ using rm -r /tmp/hadoop-dtg95/dfs/data/
+rm -r /tmp/hadoop-dtg95/dfs/data/
 stop-all.sh
 hadoop namenode -format
 start-all.sh
