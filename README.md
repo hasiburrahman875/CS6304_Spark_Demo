@@ -143,6 +143,69 @@ EOF
 2. Go to the top right corner and select the power button -> Log Out [Don't power off]
 3. Log in to the remote desktop again. Now your spark path is set and you can type "spark-shell" in the terminal to access spark.
 You can access spark by typing absolute path "/opt/spark/bin/spark-shell" also.
+4. If you see following error:
+   ```
+   Error: A JNI error has occurred, please check your installation and try again Exception in thread "main" java.lang.UnsupportedClassVersionError:
+   ```
+  Do:
+
+##### Step 1: Install Java 17 (without removing Java 8)
+
+```bash
+sudo apt update
+sudo apt install -y openjdk-17-jdk
+```
+
+Now you’ll have both Java 8 and Java 17.
+
+
+##### Step 2: Point Spark to Java 17 only
+
+Instead of changing the whole system’s Java, just tell Spark which Java to use by setting the `JAVA_HOME` variable.
+
+Edit your `~/.bashrc` (or `~/.zshrc` if using zsh):
+
+```bash
+nano ~/.bashrc
+```
+
+Add this at the end:
+
+```bash
+# Spark should use Java 17
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+export PATH=$JAVA_HOME/bin:$PATH
+```
+
+Save and reload:
+
+```bash
+source ~/.bashrc
+```
+
+
+##### Step 3: Verify Spark works with Java 17
+
+Check Java inside your shell:
+
+```bash
+java -version
+```
+
+It should now show something like:
+
+```
+openjdk version "17.0.x"
+```
+
+Then run Spark:
+
+```bash
+spark-shell
+```
+
+You should see the Spark logo and Scala REPL prompt (`scala>`).
+
 
 ### Run a scala file
 Run a scala file using the following command 
@@ -150,4 +213,4 @@ Run a scala file using the following command
 spark-shell
 :load SimpleWordCount.scala
 ```
-Please replace the paths according to your file locations. If you are facing issues please make sure you are giving the correct paths while loading the hadoop file from the HDFS
+Please replace the paths according to your file locations. If you are facing issues please make sure you are giving the correct paths while loading the Hadoop file from the HDFS
