@@ -91,7 +91,7 @@ If everything is fine, you should see the following jobs (ignore the job number 
 13807 DataNode
 ```
 
-##### if DataNode is Missing:
+#### if DataNode is Missing:
 
 **Problem:** NameNode UI (`http://localhost:9870`) shows **no DataNodes**.
 
@@ -105,7 +105,7 @@ start-yarn.sh
 If still missing, clear old DataNode data:
 
 ```bash
-rm -r /tmp/hadoop-dtg95/dfs/data/
+rm -r /tmp/hadoop-username/dfs/data/
 stop-all.sh
 hadoop namenode -format
 start-all.sh
