@@ -31,7 +31,7 @@ If you encounter a black screen issue when connecting to the VM via Remote Deskt
 SSH into the VM
 ```
 ssh <username>@cs6304-<username>-01.class.mst.edu
-````
+```
 
 Update and Install Required Packages
 
