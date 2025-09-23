@@ -33,7 +33,6 @@ SSH into the VM
 ssh <username>@cs6304-<username>-01.class.mst.edu
 ```
 
-
 Update and Install Required Packages
 
 ```bash
