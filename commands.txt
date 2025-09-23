@@ -32,7 +32,15 @@ System.out.println(words.collect().mkString("\n"))
 val wordMap = words.map(word => (word,1))
 System.out.println(wordMap.collect().mkString("\n"))
 
-val wordCount = wordMap.reduceByKey(_+_) #val wordCounts = wordPairs.reduceByKey((v1, v2) => v1 + v2)
+val wordCount = wordMap.reduceByKey(_+_) 
+
+// val wordCounts = wordPairs.reduceByKey((v1, v2) => v1 + v2)
+// ("Jingle", [1, 1, 1])
+// Step 1: 1 + 1 = 2
+// Step 2: 2 + 1 = 3
+// Result: ("Jingle", 3)
+
+
 System.out.println(wordCount.collect().mkString("\n"))
 
 val sorted = wordCount.sortBy(-_._2)
