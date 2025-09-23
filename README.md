@@ -114,7 +114,7 @@ start-all.sh
 
 
 ### Spark Demo
-Follow the instructions from commands.txt file.
+Follow the instructions from commands.txt file. Make sure you have installed Spark in your VM.
 
 
 
